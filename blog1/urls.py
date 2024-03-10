@@ -4,7 +4,11 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('admin/', views.site.urls),
-    path('post/', views.post, name="index")
+    path('admin/', admin.site.urls),
+    path('post/', views.index),
+
+    #vista del modulo
+    path('post/', 'include'('post.urls'))
  
 ]
+
